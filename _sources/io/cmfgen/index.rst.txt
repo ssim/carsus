@@ -1,8 +1,7 @@
 CMFGEN
 ======
 
-Here we show how to parse and dump files from John Hillier's CMFGEN Atomic Data collection.
-
+.. note:: Currently there's no way to ingest CMFGEN data into Carsus atomic files. The following examples only show how to parse and dump data from CMFGEN files to a more structured format.
 
 .. toctree::
 

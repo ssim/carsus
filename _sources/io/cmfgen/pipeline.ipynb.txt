@@ -4,7 +4,26 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# Converting the CMFGEN database to HDF5"
+    "# Batch convert files to HDF5\n",
+    "\n",
+    "<div class=\"alert alert-warning\">\n",
+    "\n",
+    "**NOTE:** currently converting photoionization cross-sections is very slow.\n",
+    "\n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "nbsphinx": "hidden"
+   },
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "import warnings\n",
+    "warnings.simplefilter(\"ignore\")"
    ]
   },
   {
@@ -13,9 +32,6 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "import os\n",
-    "import warnings\n",
-    "warnings.simplefilter(\"ignore\")\n",
     "from carsus.io.cmfgen import (hdf_dump,\n",
     "                              CMFGENEnergyLevelsParser,\n",
     "                              CMFGENOscillatorStrengthsParser,\n",
@@ -27,7 +43,11 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Define `CMFGEN_DIR` variable in your shell configuration file. For example: `CMFGEN_DIR=/tmp/atomic_data_15nov16`"
+    "Define `CMFGEN_DIR` variable in your shell configuration file:\n",
+    "\n",
+    "```\n",
+    "export CMFGEN_DIR=/tmp/atomic_data_15nov16\n",
+    "```"
    ]
   },
   {
@@ -44,7 +64,9 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Choose the file patterns to match."
+    "## Energy levels\n",
+    "\n",
+    "Choose file patterns to match:"
    ]
   },
   {
@@ -60,9 +82,9 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Call the `h5dump` function passing the `cmfgen_dir`, `patterns`, `parser`. \n",
+    "Call the `h5dump` function passing the parameters `cmfgen_dir`, `patterns` and `parser`. \n",
     "\n",
-    "`chunk_size` and `ignore_patterns` are optional parameters."
+    "Parameters `chunk_size` and `ignore_patterns` are optional."
    ]
   },
   {
@@ -2160,7 +2182,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Photoionization cross-sections (very slow!)"
+    "## Photoionization cross-sections"
    ]
   },
   {
@@ -3033,7 +3055,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.7"
+   "version": "3.6.10"
   }
  },
  "nbformat": 4,

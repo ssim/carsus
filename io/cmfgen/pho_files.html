@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Converting the CMFGEN database to HDF5" href="pipeline.html" />
+    <link rel="next" title="Batch convert files to HDF5" href="pipeline.html" />
     <link rel="prev" title="Collisional strengths" href="col_files.html" /> 
 </head>
 
@@ -88,24 +88,24 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/quickstart.html">Quickstart</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../data_sources.html">Datasets</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart for Carsus</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../datasets.html">Datasets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../nist/index.html">NIST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gfall.html">GFALL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chianti.html">CHIANTI</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">CMFGEN</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="osc_files.html">Energy levels and oscillator strengths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="col_files.html">Collisional strengths</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Photoionization cross-sections</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pipeline.html">Converting the CMFGEN database to HDF5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pipeline.html">Batch convert files to HDF5</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../kurucz/index.html">Kurucz Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nist/index.html">NIST</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../zeta/index.html">Knox Long’s recombination zeta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zeta.html">Knox Long’s zeta data</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">Reference/API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../model.html">Database Models in carsus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../macroatom.html">Macro Atom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/tardis_atomic_file.html">Creating a TARDIS atomic file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../legacy/legacy.html">SQL interface (Carsus legacy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compare_atomic_files.html">Compare atomic files</a></li>
 </ul>
 
             
@@ -151,7 +151,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../data_sources.html">Datasets</a> &raquo;</li>
+          <li><a href="../datasets.html">Datasets</a> &raquo;</li>
         
           <li><a href="index.html">CMFGEN</a> &raquo;</li>
         
@@ -841,7 +841,7 @@ list
 </pre></div>
 </div>
 </div>
-<p>will dump all the cross-sections tables and metadata inside the file <code class="docutils literal notranslate"><span class="pre">phot_nahar_A.h5</span></code> located in the same path of the original file.</p>
+<p>will dump all the cross-sections tables and metadata inside the file <code class="docutils literal notranslate"><span class="pre">phot_nahar_A.h5</span></code> located at the same path of the original file.</p>
 </div>
 
 
@@ -852,7 +852,7 @@ list
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pipeline.html" class="btn btn-neutral float-right" title="Converting the CMFGEN database to HDF5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pipeline.html" class="btn btn-neutral float-right" title="Batch convert files to HDF5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="col_files.html" class="btn btn-neutral float-left" title="Collisional strengths" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -864,7 +864,7 @@ list
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, TARDIS team
+        &copy; Copyright 2020, TARDIS collaboration
 
     </p>
   </div>

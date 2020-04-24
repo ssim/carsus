@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Atomic Weights and Isotopic Compositions" href="nist_weights_comp.html" />
-    <link rel="prev" title="Parsing the GFALL Kurucz file" href="../kurucz/reading_gfall.html" /> 
+    <link rel="next" title="Atomic weights and ionization energies" href="nist_weights_ioniz.html" />
+    <link rel="prev" title="Datasets" href="../datasets.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,21 +88,22 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/quickstart.html">Quickstart</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../data_sources.html">Datasets</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../cmfgen/index.html">CMFGEN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../kurucz/index.html">Kurucz Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart for Carsus</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../datasets.html">Datasets</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">NIST</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="nist_weights_comp.html">Atomic Weights and Isotopic Compositions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nist_weights_ioniz.html">Atomic weights and ionization energies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="levels_lines.html">Levels and lines</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../zeta/index.html">Knox Long’s recombination zeta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gfall.html">GFALL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chianti.html">CHIANTI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmfgen/index.html">CMFGEN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zeta.html">Knox Long’s zeta data</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">Reference/API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../model.html">Database Models in carsus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../macroatom.html">Macro Atom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/tardis_atomic_file.html">Creating a TARDIS atomic file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../legacy/legacy.html">SQL interface (Carsus legacy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compare_atomic_files.html">Compare atomic files</a></li>
 </ul>
 
             
@@ -148,7 +149,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../data_sources.html">Datasets</a> &raquo;</li>
+          <li><a href="../datasets.html">Datasets</a> &raquo;</li>
         
       <li>NIST</li>
     
@@ -195,11 +196,10 @@
 </style>
 <div class="section" id="nist">
 <h1>NIST<a class="headerlink" href="#nist" title="Permalink to this headline">¶</a></h1>
-<p>The National Institute of Standards (NIST) provides a wide array of atomic data. Here we show how to load some of them
-into Carsus</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="nist_weights_comp.html">Atomic Weights and Isotopic Compositions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nist_weights_ioniz.html">Atomic weights and ionization energies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="levels_lines.html">Levels and lines</a></li>
 </ul>
 </div>
 </div>
@@ -212,10 +212,10 @@ into Carsus</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nist_weights_comp.html" class="btn btn-neutral float-right" title="Atomic Weights and Isotopic Compositions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nist_weights_ioniz.html" class="btn btn-neutral float-right" title="Atomic weights and ionization energies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../kurucz/reading_gfall.html" class="btn btn-neutral float-left" title="Parsing the GFALL Kurucz file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../datasets.html" class="btn btn-neutral float-left" title="Datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -224,7 +224,7 @@ into Carsus</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, TARDIS team
+        &copy; Copyright 2020, TARDIS collaboration
 
     </p>
   </div>

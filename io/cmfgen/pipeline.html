@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Converting the CMFGEN database to HDF5 &mdash; Carsus v</title>
+  <title>Batch convert files to HDF5 &mdash; Carsus v</title>
   
 
   
@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Kurucz Dataset" href="../kurucz/index.html" />
+    <link rel="next" title="Knox Long’s zeta data" href="../zeta.html" />
     <link rel="prev" title="Photoionization cross-sections" href="pho_files.html" /> 
 </head>
 
@@ -88,29 +88,30 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/quickstart.html">Quickstart</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../data_sources.html">Datasets</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart for Carsus</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../datasets.html">Datasets</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../nist/index.html">NIST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gfall.html">GFALL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chianti.html">CHIANTI</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">CMFGEN</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="osc_files.html">Energy levels and oscillator strengths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="col_files.html">Collisional strengths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pho_files.html">Photoionization cross-sections</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Converting the CMFGEN database to HDF5</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Batch convert files to HDF5</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Energy-levels">Energy levels</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Oscillator-strengths">Oscillator strengths</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#Collisional-strengths">Collisional strengths</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Photoionization-cross-sections-(very-slow!)">Photoionization cross-sections (very slow!)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Photoionization-cross-sections">Photoionization cross-sections</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../kurucz/index.html">Kurucz Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nist/index.html">NIST</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../zeta/index.html">Knox Long’s recombination zeta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zeta.html">Knox Long’s zeta data</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">Reference/API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../model.html">Database Models in carsus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../macroatom.html">Macro Atom</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks/tardis_atomic_file.html">Creating a TARDIS atomic file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../legacy/legacy.html">SQL interface (Carsus legacy)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compare_atomic_files.html">Compare atomic files</a></li>
 </ul>
 
             
@@ -156,11 +157,11 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../data_sources.html">Datasets</a> &raquo;</li>
+          <li><a href="../datasets.html">Datasets</a> &raquo;</li>
         
           <li><a href="index.html">CMFGEN</a> &raquo;</li>
         
-      <li>Converting the CMFGEN database to HDF5</li>
+      <li>Batch convert files to HDF5</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -421,17 +422,17 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Converting-the-CMFGEN-database-to-HDF5">
-<h1>Converting the CMFGEN database to HDF5<a class="headerlink" href="#Converting-the-CMFGEN-database-to-HDF5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Batch-convert-files-to-HDF5">
+<h1>Batch convert files to HDF5<a class="headerlink" href="#Batch-convert-files-to-HDF5" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p><strong>NOTE:</strong> currently converting photoionization cross-sections is very slow.</p>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">carsus.io.cmfgen</span> <span class="kn">import</span> <span class="p">(</span><span class="n">hdf_dump</span><span class="p">,</span>
+<span></span><span class="kn">from</span> <span class="nn">carsus.io.cmfgen</span> <span class="kn">import</span> <span class="p">(</span><span class="n">hdf_dump</span><span class="p">,</span>
                               <span class="n">CMFGENEnergyLevelsParser</span><span class="p">,</span>
                               <span class="n">CMFGENOscillatorStrengthsParser</span><span class="p">,</span>
                               <span class="n">CMFGENCollisionalDataParser</span><span class="p">,</span>
@@ -439,7 +440,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Define <code class="docutils literal notranslate"><span class="pre">CMFGEN_DIR</span></code> variable in your shell configuration file. For example: <code class="docutils literal notranslate"><span class="pre">CMFGEN_DIR=/tmp/atomic_data_15nov16</span></code></p>
+<p>Define <code class="docutils literal notranslate"><span class="pre">CMFGEN_DIR</span></code> variable in your shell configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CMFGEN_DIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">atomic_data_15nov16</span>
+</pre></div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -450,7 +454,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Choose the file patterns to match.</p>
+<div class="section" id="Energy-levels">
+<h2>Energy levels<a class="headerlink" href="#Energy-levels" title="Permalink to this headline">¶</a></h2>
+<p>Choose file patterns to match:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -460,8 +466,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Call the <code class="docutils literal notranslate"><span class="pre">h5dump</span></code> function passing the <code class="docutils literal notranslate"><span class="pre">cmfgen_dir</span></code>, <code class="docutils literal notranslate"><span class="pre">patterns</span></code>, <code class="docutils literal notranslate"><span class="pre">parser</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">chunk_size</span></code> and <code class="docutils literal notranslate"><span class="pre">ignore_patterns</span></code> are optional parameters.</p>
+<p>Call the <code class="docutils literal notranslate"><span class="pre">h5dump</span></code> function passing the parameters <code class="docutils literal notranslate"><span class="pre">cmfgen_dir</span></code>, <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and <code class="docutils literal notranslate"><span class="pre">parser</span></code>.</p>
+<p>Parameters <code class="docutils literal notranslate"><span class="pre">chunk_size</span></code> and <code class="docutils literal notranslate"><span class="pre">ignore_patterns</span></code> are optional.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -1103,6 +1109,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Parsing fails for <code class="docutils literal notranslate"><span class="pre">atomic/FE/III/7feb05/ERROR_CHK_FOR_FeIII_OSC</span></code> (and it’s ok).</p>
 <p>Problematic files should appear in <a href="#id1"><span class="problematic" id="id2">`list of known errors &lt;&gt;`__</span></a>.</p>
+</div>
 <div class="section" id="Oscillator-strengths">
 <h2>Oscillator strengths<a class="headerlink" href="#Oscillator-strengths" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
@@ -2348,8 +2355,8 @@ div.rendered_html tbody tr:hover {
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Photoionization-cross-sections-(very-slow!)">
-<h2>Photoionization cross-sections (very slow!)<a class="headerlink" href="#Photoionization-cross-sections-(very-slow!)" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Photoionization-cross-sections">
+<h2>Photoionization cross-sections<a class="headerlink" href="#Photoionization-cross-sections" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -3134,7 +3141,7 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../kurucz/index.html" class="btn btn-neutral float-right" title="Kurucz Dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../zeta.html" class="btn btn-neutral float-right" title="Knox Long’s zeta data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pho_files.html" class="btn btn-neutral float-left" title="Photoionization cross-sections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -3146,7 +3153,7 @@ div.rendered_html tbody tr:hover {
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, TARDIS team
+        &copy; Copyright 2020, TARDIS collaboration
 
     </p>
   </div>
