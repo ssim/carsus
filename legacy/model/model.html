@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,11 @@
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../../_static/tardis_logo.ico"/>
   
@@ -19,7 +23,9 @@
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -28,18 +34,13 @@
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
         <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Macro atom" href="../macroatom/macroatom.html" />
@@ -57,7 +58,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Carsus
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Carsus
           
 
           
@@ -80,6 +81,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -112,6 +114,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -150,7 +153,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../legacy.html">SQL interface (Carsus legacy)</a> &raquo;</li>
         
@@ -303,6 +306,73 @@ expose the auantity interface.</p>
 <dt id="carsus.model.atomic.AtomWeight.unit">
 <code class="sig-name descname">unit</code><em class="property"> = Unit(&quot;u&quot;)</em><a class="headerlink" href="#carsus.model.atomic.AtomWeight.unit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="carsus.model.atomic.DataSource">
+<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">DataSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.DataSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#carsus.model.meta.orm.UniqueMixin" title="carsus.model.meta.orm.UniqueMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.meta.orm.UniqueMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="carsus.model.atomic.ECollisionEnergy">
+<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">ECollisionEnergy</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.ECollisionQuantity" title="carsus.model.atomic.ECollisionQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.ECollisionQuantity</span></code></a></p>
+<dl class="py attribute">
+<dt id="carsus.model.atomic.ECollisionEnergy.data_source">
+<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy.data_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relationship to the DataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="carsus.model.atomic.ECollisionEnergy.data_source_id">
+<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID (in the database) of the DataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="carsus.model.atomic.ECollisionEnergy.unit">
+<code class="sig-name descname">unit</code><em class="property"> = Unit(&quot;eV&quot;)</em><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy.unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="carsus.model.atomic.ECollisionGFValue">
+<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">ECollisionGFValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.ECollisionGFValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.ECollisionQuantity" title="carsus.model.atomic.ECollisionQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.ECollisionQuantity</span></code></a></p>
+<dl class="py attribute">
+<dt id="carsus.model.atomic.ECollisionGFValue.data_source">
+<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.ECollisionGFValue.data_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relationship to the DataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="carsus.model.atomic.ECollisionGFValue.data_source_id">
+<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.ECollisionGFValue.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID (in the database) of the DataSource</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="carsus.model.atomic.ECollisionQuantity">
+<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">ECollisionQuantity</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.ECollisionQuantity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#carsus.model.meta.schema.QuantityMixin" title="carsus.model.meta.schema.QuantityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.meta.schema.QuantityMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<p>Base class for all quantities of an electron collision. Mixes in the
+QuantityMixin to expose the auantity interface.</p>
+<dl class="py attribute">
+<dt id="carsus.model.atomic.ECollisionQuantity.data_source">
+<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.ECollisionQuantity.data_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relationship to the DataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="carsus.model.atomic.ECollisionQuantity.data_source_id">
+<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.ECollisionQuantity.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID (in the database) of the DataSource</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -475,6 +545,29 @@ foo</p>
 </dd></dl>
 
 <dl class="py class">
+<dt id="carsus.model.atomic.LevelEnergy">
+<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">LevelEnergy</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.LevelEnergy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.LevelQuantity" title="carsus.model.atomic.LevelQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.LevelQuantity</span></code></a></p>
+<dl class="py attribute">
+<dt id="carsus.model.atomic.LevelEnergy.data_source">
+<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.LevelEnergy.data_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relationship to the DataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="carsus.model.atomic.LevelEnergy.data_source_id">
+<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.LevelEnergy.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID (in the database) of the DataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="carsus.model.atomic.LevelEnergy.unit">
+<code class="sig-name descname">unit</code><em class="property"> = Unit(&quot;eV&quot;)</em><a class="headerlink" href="#carsus.model.atomic.LevelEnergy.unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="carsus.model.atomic.LevelQuantity">
 <em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">LevelQuantity</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.LevelQuantity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#carsus.model.meta.schema.QuantityMixin" title="carsus.model.meta.schema.QuantityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.meta.schema.QuantityMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
@@ -495,25 +588,38 @@ expose the auantity interface.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="carsus.model.atomic.LevelEnergy">
-<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">LevelEnergy</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.LevelEnergy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.LevelQuantity" title="carsus.model.atomic.LevelQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.LevelQuantity</span></code></a></p>
+<dt id="carsus.model.atomic.LineAValue">
+<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">LineAValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.LineAValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.LineQuantity" title="carsus.model.atomic.LineQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.LineQuantity</span></code></a></p>
 <dl class="py attribute">
-<dt id="carsus.model.atomic.LevelEnergy.data_source">
-<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.LevelEnergy.data_source" title="Permalink to this definition">¶</a></dt>
+<dt id="carsus.model.atomic.LineAValue.data_source">
+<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.LineAValue.data_source" title="Permalink to this definition">¶</a></dt>
 <dd><p>Relationship to the DataSource</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="carsus.model.atomic.LevelEnergy.data_source_id">
-<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.LevelEnergy.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dt id="carsus.model.atomic.LineAValue.data_source_id">
+<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.LineAValue.data_source_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>ID (in the database) of the DataSource</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt id="carsus.model.atomic.LineGFValue">
+<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">LineGFValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.LineGFValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.LineQuantity" title="carsus.model.atomic.LineQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.LineQuantity</span></code></a></p>
 <dl class="py attribute">
-<dt id="carsus.model.atomic.LevelEnergy.unit">
-<code class="sig-name descname">unit</code><em class="property"> = Unit(&quot;eV&quot;)</em><a class="headerlink" href="#carsus.model.atomic.LevelEnergy.unit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="carsus.model.atomic.LineGFValue.data_source">
+<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.LineGFValue.data_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Relationship to the DataSource</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="carsus.model.atomic.LineGFValue.data_source_id">
+<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.LineGFValue.data_source_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID (in the database) of the DataSource</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -560,109 +666,6 @@ expose the auantity interface.</p>
 
 </dd></dl>
 
-<dl class="py class">
-<dt id="carsus.model.atomic.LineAValue">
-<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">LineAValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.LineAValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.LineQuantity" title="carsus.model.atomic.LineQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.LineQuantity</span></code></a></p>
-<dl class="py attribute">
-<dt id="carsus.model.atomic.LineAValue.data_source">
-<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.LineAValue.data_source" title="Permalink to this definition">¶</a></dt>
-<dd><p>Relationship to the DataSource</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="carsus.model.atomic.LineAValue.data_source_id">
-<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.LineAValue.data_source_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>ID (in the database) of the DataSource</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="carsus.model.atomic.LineGFValue">
-<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">LineGFValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.LineGFValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.LineQuantity" title="carsus.model.atomic.LineQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.LineQuantity</span></code></a></p>
-<dl class="py attribute">
-<dt id="carsus.model.atomic.LineGFValue.data_source">
-<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.LineGFValue.data_source" title="Permalink to this definition">¶</a></dt>
-<dd><p>Relationship to the DataSource</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="carsus.model.atomic.LineGFValue.data_source_id">
-<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.LineGFValue.data_source_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>ID (in the database) of the DataSource</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="carsus.model.atomic.ECollisionQuantity">
-<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">ECollisionQuantity</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.ECollisionQuantity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#carsus.model.meta.schema.QuantityMixin" title="carsus.model.meta.schema.QuantityMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.meta.schema.QuantityMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
-<p>Base class for all quantities of an electron collision. Mixes in the
-QuantityMixin to expose the auantity interface.</p>
-<dl class="py attribute">
-<dt id="carsus.model.atomic.ECollisionQuantity.data_source">
-<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.ECollisionQuantity.data_source" title="Permalink to this definition">¶</a></dt>
-<dd><p>Relationship to the DataSource</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="carsus.model.atomic.ECollisionQuantity.data_source_id">
-<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.ECollisionQuantity.data_source_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>ID (in the database) of the DataSource</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="carsus.model.atomic.ECollisionEnergy">
-<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">ECollisionEnergy</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.ECollisionQuantity" title="carsus.model.atomic.ECollisionQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.ECollisionQuantity</span></code></a></p>
-<dl class="py attribute">
-<dt id="carsus.model.atomic.ECollisionEnergy.data_source">
-<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy.data_source" title="Permalink to this definition">¶</a></dt>
-<dd><p>Relationship to the DataSource</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="carsus.model.atomic.ECollisionEnergy.data_source_id">
-<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy.data_source_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>ID (in the database) of the DataSource</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="carsus.model.atomic.ECollisionEnergy.unit">
-<code class="sig-name descname">unit</code><em class="property"> = Unit(&quot;eV&quot;)</em><a class="headerlink" href="#carsus.model.atomic.ECollisionEnergy.unit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="carsus.model.atomic.ECollisionGFValue">
-<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">ECollisionGFValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.ECollisionGFValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#carsus.model.atomic.ECollisionQuantity" title="carsus.model.atomic.ECollisionQuantity"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.atomic.ECollisionQuantity</span></code></a></p>
-<dl class="py attribute">
-<dt id="carsus.model.atomic.ECollisionGFValue.data_source">
-<code class="sig-name descname">data_source</code><a class="headerlink" href="#carsus.model.atomic.ECollisionGFValue.data_source" title="Permalink to this definition">¶</a></dt>
-<dd><p>Relationship to the DataSource</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="carsus.model.atomic.ECollisionGFValue.data_source_id">
-<code class="sig-name descname">data_source_id</code><a class="headerlink" href="#carsus.model.atomic.ECollisionGFValue.data_source_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>ID (in the database) of the DataSource</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="carsus.model.atomic.DataSource">
-<em class="property">class </em><code class="sig-prename descclassname">carsus.model.atomic.</code><code class="sig-name descname">DataSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.atomic.DataSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#carsus.model.meta.orm.UniqueMixin" title="carsus.model.meta.orm.UniqueMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">carsus.model.meta.orm.UniqueMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
-</dd></dl>
-
 </div>
 </div>
 <div class="section" id="module-carsus.model.meta.base">
@@ -675,7 +678,7 @@ QuantityMixin to expose the auantity interface.</p>
 
 <dl class="py function">
 <dt id="carsus.model.meta.base.setup">
-<code class="sig-prename descclassname">carsus.model.meta.base.</code><code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">\*\*kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.meta.base.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">carsus.model.meta.base.</code><code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#carsus.model.meta.base.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a configured “Session” class and returns its instance</p>
 </dd></dl>
 
@@ -769,11 +772,19 @@ using LIMIT.</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, TARDIS collaboration
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -784,7 +795,6 @@ using LIMIT.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
